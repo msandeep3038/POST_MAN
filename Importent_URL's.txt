@@ -1,0 +1,15 @@
+Online_Java_compiler : https://www.onlinegdb.com/online_java_compiler
+Testing : https://testng.org/
+manual2automation : https://manual2automation.com/selusingtestNG.html
+
+APIS: 
+https://chercher.tech/sample/api/books.xml
+https://reqres.in/
+https://petstore.swagger.io/#/pet/findPetsByStatus
+https://documenter.getpostman.com/view/8854915/Szf26WHn
+
+PostMan:
+https://learning.postman.com/docs/writing-scripts/script-references/test-examples/
+
+Rest_Assured
+https://rest-assured.io/
