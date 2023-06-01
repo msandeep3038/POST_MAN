@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "e9fc45a0-155e-4162-bf86-77f365306a9c",
+		"name": "MAY26_learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Google",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://google.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "Twitter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://twitter.com"
+			},
+			"response": []
+		},
+		{
+			"name": "facebook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://facebook.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "Reqres_post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"name\": \"{{NM}}\",\r\n    \"job\": \"{{JB}}\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{reqres}}/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Reqres_get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{reqres}}/users?page=2",
+					"host": [
+						"{{reqres}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>{{num}}</ubiNum>\r\n    </NumberToWords>\r\n  </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "NM",
+			"value": "sandeep",
+			"type": "default"
+		},
+		{
+			"key": "JB",
+			"value": "tester",
+			"type": "default"
+		}
+	]
+}

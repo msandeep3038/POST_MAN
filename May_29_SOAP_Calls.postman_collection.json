@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "9e65cc6f-780b-4f92-8dcf-73cc50b9d31c",
+		"name": "May_29_SOAP_Calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Celsius to Farenheit Conversion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"var json_responce_body = xml2Json(responseBody);\r",
+							"console.log(json_responce_body);\r",
+							"tests[\"Check expected Farenheit value\"] = json_responce_body['soap:Envelope']['soap:Body']['CelsiusToFahrenheitResponse']['CelsiusToFahrenheitResult']==='68';\r",
+							"var Fahrenheit_Value=json_responce_body['soap:Envelope']['soap:Body']['CelsiusToFahrenheitResponse']['CelsiusToFahrenheitResult'];\r",
+							"console.log(Fahrenheit_Value);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap12:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <CelsiusToFahrenheit xmlns=\"https://www.w3schools.com/xml/\">\r\n      <Celsius>20</Celsius>\r\n    </CelsiusToFahrenheit>\r\n  </soap12:Body>\r\n</soap12:Envelope>"
+				},
+				"url": "https://www.w3schools.com/xml/tempconvert.asmx"
+			},
+			"response": []
+		},
+		{
+			"name": "NumberToWords",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"var json_Num2Wor_responce_body = xml2Json(responseBody);\r",
+							"console.log(json_Num2Wor_responce_body);\r",
+							"tests[\"Check expected Farenheit value\"] = json_Num2Wor_responce_body['soap:Envelope']['soap:Body']['m:NumberToWordsResponse']['m:NumberToWordsResult']==='one thousand two hundred';\r",
+							"var Num2Wor_Value=json_Num2Wor_responce_body['soap:Envelope']['soap:Body']['m:NumberToWordsResponse']['m:NumberToWordsResult'];\r",
+							"console.log(Num2Wor_Value);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>1200</ubiNum>\r\n    </NumberToWords>\r\n  </soap:Body>\r\n</soap:Envelope>"
+				},
+				"url": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso"
+			},
+			"response": []
+		}
+	]
+}

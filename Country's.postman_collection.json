@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "c0040800-cd35-40e1-8bb6-1b29d1c88f75",
+		"name": "Country's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List of Countries by Name",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Length",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <ListOfCountryNamesByName xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n    </ListOfCountryNamesByName>\r\n  </soap12:Body>\r\n</soap12:Envelope>"
+				},
+				"url": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
+			},
+			"response": []
+		},
+		{
+			"name": "Captial City for a Country",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <CapitalCity xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n      <sCountryISOCode>AF</sCountryISOCode>\r\n    </CapitalCity>\r\n  </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
+			},
+			"response": []
+		},
+		{
+			"name": "Currency for a Country",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <CountryCurrency xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n      <sCountryISOCode>IN</sCountryISOCode>\r\n    </CountryCurrency>\r\n  </soap:Body>\r\n</soap:Envelope>"
+				},
+				"url": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
+			},
+			"response": []
+		},
+		{
+			"name": "Flag for a Country",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <CountryFlag xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n      <sCountryISOCode>IN</sCountryISOCode>\r\n    </CountryFlag>\r\n  </soap:Body>\r\n</soap:Envelope>"
+				},
+				"url": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
+			},
+			"response": []
+		},
+		{
+			"name": "International Phone Code for a Country Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <CountryIntPhoneCode xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n      <sCountryISOCode>US</sCountryISOCode>\r\n    </CountryIntPhoneCode>\r\n  </soap:Body>\r\n</soap:Envelope>"
+				},
+				"url": "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
+			},
+			"response": []
+		}
+	]
+}
